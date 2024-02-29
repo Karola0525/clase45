@@ -25,7 +25,7 @@ class Game {
     player = new Player();
     playerCount = player.getCount();
 
-    //NOVENO Añadir campo carsAtEnd por defecto en 0 FIN DE LA CLASE
+  
     database.ref("/").update({
       carsAtEnd: 0
     });
@@ -95,9 +95,9 @@ class Game {
     this.handleElements();
     this.handleResetButton();
     Player.getPlayersInfo();
-    //QUINTO LLAMAR MÉTODO PARA ACTUALIZAR LA BD 
+   
     player.getCarsAtEnd();
-     //OJO AQUI COMIENZA LA ACTIVIDAD DEL ALUMNO, BAJAR A LA LINEA 135
+  
 
     if (allPlayers !== undefined) {
       image(track, 0, -height * 5, width, height * 6);
@@ -133,9 +133,9 @@ class Game {
       }
 
       this.handlePlayerControls();
-      //SEXTO CREAR LINEA DE META
+      
       const finishLine = height * 6 - 100; 
-      //SÉPTIMO CONDICIONAL PARA EVALUAR LA POSICIÓN DE CARRITO Y CAMBIAR GAMESTATE
+      
       if (player.positionY > finishLine) {
         gameState = 2;
         player.rank += 1;
@@ -238,8 +238,7 @@ handlePlayerControls() {
   }
   //console.log(allPlayers)
 }
-//OCTAVO EXPLICAR MÉTODO, USO DE SWAL, LUEGO IR A MÉTODO STAR
-//REVISAR LIBRERIA EN INDEX
+
 showRank() {
   swal({
     title: `¡Impresionante!${"\n"}Rank${"\n"}${player.rank}`,
